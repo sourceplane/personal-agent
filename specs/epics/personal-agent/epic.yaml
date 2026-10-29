@@ -1,0 +1,30 @@
+# The epic's declaration. metadata.name equals the directory name; metadata.key
+# is the task-key prefix this epic reserves (PA → PA-1, PA-2, …). Owner, target
+# date and health are the platform's — never written here.
+apiVersion: orun.io/v1
+kind: Epic
+metadata:
+  name: personal-agent
+  key: PA
+spec:
+  title: "A personal AI agent with Hugging Face models on Cloudflare Workers"
+  summary: "A personal AI agent — a chat page and /api/chat on one plain Cloudflare Worker, answering with Workers AI through its own binding (no key) or with its owner's Hugging Face models (Inference Providers, the models HuggingChat runs included) and Gradio Spaces, remembering what it is told in a SQLite-backed Durable Object, locked behind one access key — inside ai-slackbot's baseline machinery, it becomes an Orun baseline that takes a new agent from nothing to live on stage and prod in one landing."
+  state: started
+  milestones:
+    - name: "PA0 — the spec"
+      exitCriteria:
+        - "the repository is born with its intent, CI, tooling and spec index, and this doc set and the task contracts are on main"
+      tasks: [PA-1]
+    - name: "PA1 — the agent on Workers"
+      exitCriteria:
+        - "apps/api is the agent as one Hono Worker: its page at /, /api/chat, /api/models and /api/memories behind the owner's door, /health; Workers AI its default model, Hugging Face models and Spaces added from HF_MODELS or the page"
+        - "every /api route is refused before any work — 503 with no access key stored, 401 with a wrong one; a Space's URL is derived from its id, so HF_TOKEN only reaches Hugging Face"
+        - "`pnpm typecheck`, `pnpm lint`, `pnpm test` and `pnpm build` are green, the tests driving every route in-process with the real Durable Object over SQLite and Hugging Face stood in for over HTTP"
+        - "the README says how to unlock it, add Hugging Face models, run, test and deploy it"
+      tasks: [PA-2]
+    - name: "PA2 — a baseline"
+      exitCriteria:
+        - "blueprint.yaml (the console card) and repo-blueprint.yaml (the build) take a new agent from nothing to live on stage and prod in one landing, then record it"
+        - "an agent built from it carries the agent only, renamed throughout to its own name, repository and Worker, with its licence"
+        - "Baseline CI is green: contract tests, generated component docs, the blueprint read by the pinned orun, the leak gate, the offline bootstrap and the end-to-end tier — the stage lane's steps in a staged job tree, the Worker smoke-tested as born and unlocked and driven against stand-ins for Workers AI and Hugging Face"
+      tasks: [PA-3]

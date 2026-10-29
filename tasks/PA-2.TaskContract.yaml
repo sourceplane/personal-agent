@@ -1,0 +1,17 @@
+apiVersion: orun.io/v1
+kind: TaskContract
+metadata:
+  name: PA-2
+  title: "The agent on Workers"
+spec:
+  goal: A personal AI agent runs as one Cloudflare Worker — its page, /api/chat with Workers AI or the owner's Hugging Face models and Spaces, its memory in a Durable Object, every /api route behind the owner's access key — with its tests, and its README saying how to unlock it and add Hugging Face models
+  affects:
+    - apps/api
+    - tests/api
+    - pnpm-lock.yaml
+    - pnpm-workspace.yaml
+    - README.md
+  doneWhen:
+    - pnpm typecheck, lint, test and build are green
+    - wrangler dev serves the page, refuses /api without the key (503 before one is stored, 401 for a wrong one), answers a chat on Workers AI, remembers a fact into the next conversation, and answers through a Hugging Face model and a Space; /health names the agent, the environment and what it is configured with
+  gates: []
