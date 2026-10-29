@@ -40,6 +40,7 @@ describe("GET /", () => {
     const escaped = API_NAME.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
     expect(html).toContain(`<title>${escaped}</title>`);
     expect(html).not.toMatch(/<script[^>]+src=|<link[^>]+href=/);
+    expect(html).toContain('Built with <a href="https://orunbase.com"');
     expect(page('<b>"x"</b>')).toContain("<title>&lt;b&gt;&quot;x&quot;&lt;/b&gt;</title>");
   });
 

@@ -24,7 +24,7 @@ wrangler renderer, the pnpm workspace and turbo pipeline, and the spec index
 - `wrangler.jsonc` (the `AI` and `MEMORY` bindings in every environment, the
   `v1` SQLite migration) and `component.yaml` (`cloudflare-worker-turbo`, the
   three keys as optional secrets pushed by `runtimeSecrets`, a smoke over
-  `/health` and the chat door). `LICENSE.md`.
+  `/health` and the chat door). `LICENSE` (Apache-2.0) and `NOTICE` at the root.
 - `tests/api`: vitest — every route in-process; the real `AgentMemory` over
   Node's SQLite (a `cloudflare:workers` stub for its base class); stand-ins
   for the AI binding, the router (one model that refuses tools) and a Gradio

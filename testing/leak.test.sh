@@ -93,7 +93,7 @@ if "README.md" not in placed:
 for must in (".github/workflows/ci.yml",
              "apps/api/component.yaml", "apps/api/wrangler.jsonc", "apps/api/src/index.ts",
              "apps/api/src/identity.ts", "apps/api/src/memory.ts", "apps/api/src/ui.ts",
-             "apps/api/LICENSE.md", "tests/api/component.yaml", "tests/api/src/chat.test.ts",
+             "LICENSE", "NOTICE", "tests/api/component.yaml", "tests/api/src/chat.test.ts",
              "tooling/wire/render.mjs", ".rebrand/values.json", "pnpm-lock.yaml"):
     if must not in placed:
         bad(f"{must} would not ship, and the agent needs it (its memory, its page, its licence)")

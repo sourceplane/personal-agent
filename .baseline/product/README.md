@@ -1,5 +1,7 @@
 # personal-agent
 
+[![Built with Orunbase](https://img.shields.io/badge/built%20with-Orunbase-3b5bdb)](https://orunbase.com) [![License: Apache-2.0](https://img.shields.io/badge/license-Apache--2.0-blue)](LICENSE)
+
 Your own **AI agent** on one **Cloudflare Worker**. It answers in its own
 chat page with **Workers AI**, through the Worker's own `AI` binding (no AI
 key), and with **your Hugging Face models**: any model that Hugging Face's
@@ -210,6 +212,14 @@ take one off the Worker, run
   `chat` endpoint decides what it remembers.
 - **Gradio 5.** Spaces are called through `/gradio_api/call/<endpoint>`.
   Older Gradio versions are not supported.
+
+## License
+
+Apache-2.0 — see [LICENSE](LICENSE). This agent was created with
+[Orunbase](https://orunbase.com); [NOTICE](NOTICE) carries that attribution,
+and section 4(d) of the License asks that it stay with any copy or derivative
+you distribute. Your own changes are yours to license as you choose, alongside
+it. List what you build on [openproduct](https://openproduct.live).
 
 ## Custom domain
 

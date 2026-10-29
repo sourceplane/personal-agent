@@ -191,6 +191,19 @@ modules:
     source: baseline
     from: turbo.json
     to: turbo.json
+  # THE LICENCE AND ITS NOTICE, AT THE ROOT, where GitHub detects a licence
+  # (and so openproduct, which lists the licence GitHub classifies). Apache
+  # 2.0 section 4(d) keeps NOTICE's attribution in every redistribution.
+  - name: root-license
+    mode: copy
+    source: baseline
+    from: LICENSE
+    to: LICENSE
+  - name: root-notice
+    mode: copy
+    source: baseline
+    from: NOTICE
+    to: NOTICE
   - name: root-gitignore
     mode: copy
     source: baseline
@@ -407,7 +420,7 @@ phases:
       await:  "One convergence is deploying the agent to stage and prod: install, build, deploy, its keys pushed as Worker secrets, and a smoke against /health and the chat door in each. Nothing is stuck."
       done:   "{{ .inputs.reponame }} is live on stage and prod — {{ .meta.files }} files on main, branded as {{ .inputs.productname }}, /health answering on both. That took {{ .meta.elapsed }}."
       failed: "The agent did not come up. The failing lane above names the step — the build, the deploy or the smoke — and a provider error is in its log; whatever deployed is still there."
-    modules: [ai-deployment, ai-operations, api, api-tests, discovery-roots, github-workflows, rebrand-values, root-gitignore, root-intent, root-package-json, root-pnpm-lock, root-pnpm-workspace, root-readme, root-turbo, tooling-eslint, tooling-tsconfig, tooling-wire, vscode]
+    modules: [ai-deployment, ai-operations, api, api-tests, discovery-roots, github-workflows, rebrand-values, root-gitignore, root-intent, root-license, root-notice, root-package-json, root-pnpm-lock, root-pnpm-workspace, root-readme, root-turbo, tooling-eslint, tooling-tsconfig, tooling-wire, vscode]
     # THE PLATFORM MUST BE ABLE TO SEE THE REPOSITORY BEFORE IT EXISTS. Every
     # phase lands a pull request that files under its task, and the platform
     # learns of a PR only through the GitHub App installation on the account

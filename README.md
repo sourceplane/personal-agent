@@ -70,7 +70,7 @@ None of this repository's machinery ships, and nothing that ships names it.
 | Calling a Gradio Space | `apps/api/src/spaces.ts` |
 | Memory and added models (the Durable Object) | `apps/api/src/memory.ts` |
 | The agent's name (the rename's seam; its page, prompt and `/health`) | `apps/api/src/identity.ts` |
-| The licence (MIT) | `apps/api/LICENSE.md` |
+| The licence (Apache-2.0) and its attribution notice | `LICENSE`, `NOTICE` (both ship to every product, at its root) |
 | Worker config (name, Workers AI and Durable Object bindings, its migration, per-environment vars) | `apps/api/wrangler.jsonc` |
 | Deploy contract (and the keys it pushes as Worker secrets) | `apps/api/component.yaml` (`cloudflare-worker-turbo`) |
 | Tests | `tests/api` (vitest: every route in-process, the real Durable Object over Node's SQLite, Workers AI and Hugging Face stood in for) |
@@ -121,4 +121,4 @@ agent and add Hugging Face models.
 
 ## Licence
 
-The agent is original code written for this baseline, MIT (`apps/api/LICENSE.md`).
+The agent is original code written for this baseline, licensed Apache-2.0 (`LICENSE`). Every product built from it carries `LICENSE` and `NOTICE` at its root, so GitHub (and openproduct) detects the licence, and NOTICE's "created with Orunbase" attribution travels with every redistribution (Apache-2.0 §4(d)).

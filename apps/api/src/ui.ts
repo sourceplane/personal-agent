@@ -1,4 +1,7 @@
-// The agent's page, served at GET /. One self-contained document — no
+// The agent's page, served at GET /. Its footer credits Orunbase, the
+// platform it was created with — the owner's to keep (NOTICE asks only that
+// the attribution travel with the source, not that the page show it).
+// One self-contained document — no
 // script, style or font from anywhere else — so the Worker is the whole of
 // what the owner's browser talks to. The conversation and the access key
 // stay in the browser (localStorage); models and memories are read from and
@@ -43,6 +46,8 @@ aside ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 aside li{display:flex;gap:8px;align-items:flex-start;justify-content:space-between;font-size:14px}
 aside li button{padding:2px 8px;font-size:12px}
 .hint{font-size:13px;color:var(--muted);margin:0}
+.credit{margin:0;padding:6px 16px 10px;font-size:12px;color:var(--muted);text-align:center;background:var(--panel)}
+.credit a{color:inherit}
 #lock{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:16px}
 #lock form{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:24px;display:grid;gap:12px;width:100%;max-width:380px}
 #lock h1{margin:0;font-size:18px}
@@ -72,6 +77,7 @@ aside li button{padding:2px 8px;font-size:12px}
       <textarea id="input" placeholder="Ask your agent…" required></textarea>
       <button class="primary" id="send">Send</button>
     </form>
+    <p class="credit">Built with <a href="https://orunbase.com" target="_blank" rel="noopener">Orunbase</a> · open source, Apache-2.0</p>
   </section>
   <aside id="side">
     <section>

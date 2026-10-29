@@ -27,7 +27,7 @@ choice a reader of the code might otherwise have to reconstruct.
 | 12 | `GET /health`: `status`, `name`, `environment`, `access`, `huggingface`, `models` (default and counts), `tools`, `endpoints` — names only | The deploy's smoke and the bootstrap's probes read it |
 | 13 | `src/identity.ts`: `API_NAME = "Personal AI Agent"`, the one rename seam (the page title, the system prompt, `/health`) | One seam |
 | 14 | `wrangler.jsonc` (`<repo>-api`, `nodejs_compat`, `AI` and `MEMORY` in every environment, the migration) and `component.yaml` (`cloudflare-worker-turbo`, three optional secrets pushed by `runtimeSecrets`, a smoke over `/health` and the chat door) | The Worker's config and the deploy contract |
-| 15 | `apps/api/LICENSE.md`: MIT | The product carries its licence |
+| 15 | `LICENSE` (Apache-2.0) and `NOTICE` at the root, both shipped | GitHub and openproduct detect the licence; NOTICE carries the Orunbase attribution (§4(d)) |
 | 16 | Tests: `tests/api` (vitest, in-process) — every route, the door, the real `AgentMemory` over Node's SQLite, stand-ins for the AI binding, the router and a Space, the name seam | The Durable Object's SQL is the SQL that runs |
 
 ## Verified

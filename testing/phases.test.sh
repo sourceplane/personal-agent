@@ -50,7 +50,7 @@ if not phases:
 
 PARTITION = {
     "01-product": ["ai-deployment", "ai-operations", "api", "api-tests", "discovery-roots",
-                   "github-workflows", "rebrand-values", "root-gitignore", "root-intent",
+                   "github-workflows", "rebrand-values", "root-gitignore", "root-intent", "root-license", "root-notice",
                    "root-package-json", "root-pnpm-lock",
                    "root-pnpm-workspace", "root-readme", "root-turbo", "tooling-eslint",
                    "tooling-tsconfig", "tooling-wire", "vscode"],
