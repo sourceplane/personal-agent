@@ -151,7 +151,7 @@ orun new --blueprint repo-blueprint.yaml \
   enter the key (the agent's README, "Unlock the agent").
 - **Add Hugging Face models**: store `HF_TOKEN` (a fine-grained token with
   "Make calls to Inference Providers") and redeploy, then add models and
-  Spaces in the page's side panel, or list them in `HF_MODELS` (the agent's
+  Spaces in the page's settings (☰ → Models), or list them in `HF_MODELS` (the agent's
   README, "Add Hugging Face models"). The workspace's Hugging Face
   integration holds the same kind of token; it is not brokered into the
   build.
